@@ -1,12 +1,13 @@
 const CACHE_NAME = 'leaveledger-cache-v1';
 
 const urlsToCache = [
-  '/index.html',
-  '/leaveledger.png',
-  '/leaveledger.ico',
-  '/leaveledger192.png',
-  '/leaveledger512.png',
-  '/manifest.json',
+  'index.html',
+  'leaveledger.png',
+  'leaveledgerBG.png',
+  'leaveledger.ico',
+  'leaveledger192.png',
+  'leaveledger512.png',
+  'manifest.json',
   'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap',
   'https://cdn.tailwindcss.com',
   'https://unpkg.com/lucide@latest',
@@ -51,3 +52,4 @@ self.addEventListener('activate', (event) => {
     })
   );
 });
+
