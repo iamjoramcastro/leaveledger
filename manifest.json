@@ -1,9 +1,9 @@
 {
   "name": "LeaveLedger",
   "short_name": "LeaveLedger",
-  "description": "An efficient and transparent way to manage leave credits.",
-  "start_url": "/index.html",
-  "scope": "/",
+  "description": "An efficient and transparent way in managing the leave credits across SDO-Island Garden City of Samal.",
+  "start_url": "/leaveledger/index.html",
+  "scope": "/leaveledger/",
   "display": "standalone",
   "background_color": "#f8fafc",
   "theme_color": "#0891b2",
