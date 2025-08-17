@@ -1,13 +1,13 @@
-const CACHE_NAME = 'leaveledger-cache-v1';
+const CACHE_NAME = 'leaveledger-cache-v10';
 
 const urlsToCache = [
-  'index.html',
-  'leaveledger.png',
-  'leaveledgerBG.png',
-  'leaveledger.ico',
-  'leaveledger192.png',
-  'leaveledger512.png',
-  'manifest.json',
+  '/index.html',
+  '/leaveledger.png',
+  '/leaveledgerBG.png',
+  '/leaveledger.ico',
+  '/leaveledger192.png',
+  '/leaveledger512.png',
+  '/manifest.json',
   'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap',
   'https://cdn.tailwindcss.com',
   'https://unpkg.com/lucide@latest',
@@ -29,13 +29,19 @@ self.addEventListener('install', (event) => {
 
 self.addEventListener('fetch', (event) => {
   event.respondWith(
-    caches.match(event.request)
-      .then((response) => {
-        if (response) {
-          return response;
+    caches.match(event.request).then((response) => {
+      if (response) {
+        return response;
+      }
+
+
+      return fetch(event.request).catch(() => {
+
+        if (event.request.mode === 'navigate') {
+          return caches.match('/index.html');
         }
-        return fetch(event.request);
-      })
+      });
+    })
   );
 });
 
@@ -52,4 +58,3 @@ self.addEventListener('activate', (event) => {
     })
   );
 });
-
