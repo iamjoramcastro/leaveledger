@@ -3,6 +3,7 @@
   "short_name": "LeaveLedger",
   "description": "An efficient and transparent way to manage leave credits.",
   "start_url": "/index.html",
+  "scope": "/",
   "display": "standalone",
   "background_color": "#f8fafc",
   "theme_color": "#0891b2",
