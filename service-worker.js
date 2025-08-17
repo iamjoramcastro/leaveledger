@@ -1,4 +1,4 @@
-const CACHE_NAME = 'leaveledger-cache-v1';
+const CACHE_NAME = 'leaveledger-cache-v2';
 
 const urlsToCache = [
   '/index.html',
@@ -33,8 +33,10 @@ self.addEventListener('fetch', (event) => {
       if (response) {
         return response;
       }
+      
       return fetch(event.request).catch(() => {
-        if (event.request.mode === 'navigate') {
+
+        if (event.request.mode === 'navigate' || event.request.destination === 'document') {
           return caches.match('/index.html');
         }
       });
